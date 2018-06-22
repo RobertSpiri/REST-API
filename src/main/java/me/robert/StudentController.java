@@ -1,24 +1,44 @@
 package me.robert;
 
-import me.robert.Curs;
-
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/")
 public class StudentController {
     @Autowired
-    private StudentRepository repository;
-//
-//    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-//    public List<Curs> createPet(@Valid @RequestBody Curs pets) {
-//        return pets;
-//    }
+    private StudentRepository studentRepository;
 
+    @Autowired
+    private CourseRepository courseRepository;
+
+    @RequestMapping(value = "/students/{id}/addcourse", method = RequestMethod.POST)
+    public void addCourseToStudent(@PathVariable String id, @Valid String courseId) {
+        Optional<Student> studentOptional = studentRepository.findById(new ObjectId(id));
+        Optional<Course> courseOptional = courseRepository.findById(new ObjectId(courseId));
+
+        studentOptional.ifPresent(student -> {
+            courseOptional.ifPresent(course -> {
+                student.getCourses().add(course);
+            });
+            studentRepository.save(student);
+        });
+    }
+
+
+
+//    @RequestMapping(value = "/students/{id}/courses", method = RequestMethod.GET)
+//    public List<Course> getStudentCourses(@PathVariable String id) {
+//        Optional<Student> studentOptional = studentRepository.findById(new ObjectId(id));
+//        final List<Course> courses = new ArrayList<>();
+//        studentOptional.ifPresent(student -> {
+//            courses.addAll(student.getCourses());
+//        });
+//        return courses;
+//    }
 }

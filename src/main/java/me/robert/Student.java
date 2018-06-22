@@ -1,41 +1,44 @@
 package me.robert;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
+@Document(collection = "students")
 public class Student {
     @Id
-    private String id;
+    private ObjectId id;
     private String name;
     private String lastName;
+    @DBRef(db = "courses")
+    private List<Course> courses = new ArrayList<Course>();
 
     public Student(){
     }
 
-    public Student(String id, String name, String lastName) {
+    public Student(ObjectId id, String name, String lastName) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
     }
 
-    @DBRef(db = "courses")
-    private List<Curs> courses;
-
-    public List<Curs> getCourses() {
+    public List<Course> getCourses() {
         return courses;
     }
 
-    public void setCourses(List<Curs> courses) {
+    public void setCourses(List<Course> courses) {
         this.courses = courses;
     }
 
-    public String getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
