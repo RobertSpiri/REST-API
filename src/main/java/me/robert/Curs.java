@@ -18,8 +18,16 @@ public class Curs {
         this.course = course;
     }
 
-    @DBRef
-    private List<Curs> curs_ids;
+    @DBRef(db = "students")
+    private List<Student> students;
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
 
     public String getId() {
         return id;
