@@ -13,7 +13,7 @@ public class Course {
     @Id
     private ObjectId id;
     private String course;
-    @DBRef
+    @DBRef(lazy = true)
     private List<Student> students = new ArrayList<Student>();
 
     public Course() {

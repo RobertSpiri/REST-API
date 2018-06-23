@@ -25,8 +25,28 @@ public class StudentController {
         studentOptional.ifPresent(student -> {
             courseOptional.ifPresent(course -> {
                 student.getCourses().add(course);
+                course.getStudents().add(student);
+
+                courseRepository.save(course);
             });
             studentRepository.save(student);
         });
     }
+
+    @RequestMapping(value = "/students/{id}/removecourse", method = RequestMethod.DELETE)
+    public void removeCourseFromStudent(@PathVariable String id, @Valid String courseId) {
+        Optional<Student> studentOptional = studentRepository.findById(new ObjectId(id));
+        Optional<Course> courseOptional = courseRepository.findById(new ObjectId(courseId));
+
+        studentOptional.ifPresent(student -> {
+            courseOptional.ifPresent(course -> {
+                student.getCourses().remove(course);
+                course.getStudents().remove(student);
+
+                courseRepository.save(course);
+            });
+            studentRepository.save(student);
+        });
+    }
+
 }
