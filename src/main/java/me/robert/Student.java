@@ -14,7 +14,7 @@ public class Student {
     private ObjectId id;
     private String name;
     private String lastName;
-    @DBRef(db = "courses")
+    @DBRef
     private List<Course> courses = new ArrayList<Course>();
 
     public Student(){

@@ -29,16 +29,4 @@ public class StudentController {
             studentRepository.save(student);
         });
     }
-
-
-
-//    @RequestMapping(value = "/students/{id}/courses", method = RequestMethod.GET)
-//    public List<Course> getStudentCourses(@PathVariable String id) {
-//        Optional<Student> studentOptional = studentRepository.findById(new ObjectId(id));
-//        final List<Course> courses = new ArrayList<>();
-//        studentOptional.ifPresent(student -> {
-//            courses.addAll(student.getCourses());
-//        });
-//        return courses;
-//    }
 }
