@@ -11,11 +11,20 @@ import java.util.Optional;
 
 @RestController
 public class StudentController {
-    @Autowired
     private StudentRepository studentRepository;
 
     @Autowired
+    public void setStudentRepository(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
+
     private CourseRepository courseRepository;
+
+    @Autowired
+    public void setCourseRepository(CourseRepository courseRepository) {
+
+        this.courseRepository = courseRepository;
+    }
 
     @RequestMapping(value = "/students/{id}/addcourse", method = RequestMethod.POST)
     public void addCourseToStudent(@PathVariable String id, @Valid String courseId) {
@@ -33,7 +42,7 @@ public class StudentController {
         });
     }
 
-    @RequestMapping(value = "/students/{id}/removecourse", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/students/{id}/removecourse", method = RequestMethod.POST)
     public void removeCourseFromStudent(@PathVariable String id, @Valid String courseId) {
         Optional<Student> studentOptional = studentRepository.findById(new ObjectId(id));
         Optional<Course> courseOptional = courseRepository.findById(new ObjectId(courseId));
@@ -48,5 +57,7 @@ public class StudentController {
             studentRepository.save(student);
         });
     }
+
+
 
 }

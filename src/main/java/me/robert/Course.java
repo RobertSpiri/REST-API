@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Document(collection = "courses")
 public class Course {
@@ -22,6 +23,21 @@ public class Course {
     public Course(ObjectId id, String course) {
         this.id = id;
         this.course = course;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Course course1 = (Course) o;
+        return Objects.equals(course, course1.course) &&
+                Objects.equals(students, course1.students);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(course, students);
     }
 
     public List<Student> getStudents() {
