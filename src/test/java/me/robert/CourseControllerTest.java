@@ -137,7 +137,7 @@ public class CourseControllerTest {
         courseController.setStudentRepository(studentRepository);
         courseController.setCourseRepository(courseRepository);
 
-        courseController.addStudentToCourse(course.getId().toHexString(), student.getId().toHexString());
+        course.getStudents().add(student);
         courseController.removeStudentFromCourse(course.getId().toHexString(), student.getId().toHexString());
 
         courseDBMock.get(course.getId().toHexString()).getStudents();
