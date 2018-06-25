@@ -7,8 +7,6 @@
 
 [PostMan Windows](https://app.getpostman.com/app/download/win64?_ga=2.85332507.329633062.1529917507-36859038.1529582665)
 
--Great app and its easy to use
-
 ## Usage
 
 Download the repository to your local machine
