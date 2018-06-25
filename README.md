@@ -23,6 +23,7 @@ The fun begins here
 
 Start PostMan
 
+#### VIEW
 To view all students : GET on  http://localhost:8080/students
 
 To view all the courses of a student: GET on http://localhost:8080/students/"student_id"/courses
@@ -30,6 +31,8 @@ To view all the courses of a student: GET on http://localhost:8080/students/"stu
 To view all courses : GET on http://localhost:8080/courses
 
 To view all the students of a course : GET on http://localhost:8080/courses/"course_id"/students
+
+#### ADD
 
 To add a student : POST on http://localhost:8080/students with a JSON body
 
@@ -53,6 +56,8 @@ To add a course to a student : POST on http://localhost:8080/students/"student_i
 
 To add a student to a course : POST on http://localhost:8080/courses/"course_id"/addstudent with a form-data body with the key: "studentId" and the value being the id of the student
 
+#### UPDATE
+
 To update a course : PUT on http://localhost:8080/courses/"course_id" with a JSON body
 
 {
@@ -71,6 +76,7 @@ To update a student : PUT on http://localhost:8080/students/"student_id" with a 
   
 }
 
+#### REMOVE
 To remove a student : DELETE on http://localhost:8080/students/"student_id"
 
 To remove a course : DELETE on http://localhost:8080/courses/"course_id"
