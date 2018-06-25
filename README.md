@@ -44,13 +44,13 @@ To add a student : POST on http://localhost:8080/students with a JSON body
 ```
 
 To add a course : POST on http://localhost:8080/courses with a JSON body
-
+```
 {
 
     "course" : "CourseName"
   
 }
-
+```
 To add a course to a student : POST on http://localhost:8080/students/"student_id"/addcourse with a form-data body with the key: "courseId" and the value being the id of the course
 
 To add a student to a course : POST on http://localhost:8080/courses/"course_id"/addstudent with a form-data body with the key: "studentId" and the value being the id of the student
@@ -58,15 +58,15 @@ To add a student to a course : POST on http://localhost:8080/courses/"course_id"
 #### UPDATE
 
 To update a course : PUT on http://localhost:8080/courses/"course_id" with a JSON body
-
+```
 {
 
     "course" : "NewCourseName"
   
 }
-
+```
 To update a student : PUT on http://localhost:8080/students/"student_id" with a JSON body
-
+```
 {
 
     "name" : "NewName",
@@ -74,7 +74,7 @@ To update a student : PUT on http://localhost:8080/students/"student_id" with a 
     "lastName" : "NewLastName"
   
 }
-
+```
 #### REMOVE
 To remove a student : DELETE on http://localhost:8080/students/"student_id"
 
