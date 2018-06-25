@@ -3,19 +3,31 @@
 ![alt text](https://user-images.githubusercontent.com/13012953/41840292-0e1d0914-786e-11e8-9235-5543607d2e8d.png)
 
 ## Install
+[Java](https://java.com/en/download/)
+
 [MongoDB Windows](https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.5-signed.msi/download})
 
 [PostMan Windows](https://app.getpostman.com/app/download/win64?_ga=2.85332507.329633062.1529917507-36859038.1529582665)
+
+[Maven](https://maven.apache.org/)
+
+[Maven install guide](https://maven.apache.org/install.html)
 
 ## Usage
 
 Download the repository to your local machine
 
-Start the Data Base with mongodb.exe
+Start the Data Base with mongod.exe
 
-Open and run the project (I prefer using IntelliJ)
+Run the folowing in bash
+```
+mvn clean install -U
 
-Now you can view your the content of your DB by opening http://localhost:8080 with your favorite browser
+cd "target"
+
+java -jar robert-REST-API-0.1.0.jar
+```
+Now you can view your content of your DB by opening http://localhost:8080 with your favorite browser
 
 The fun begins here
 
