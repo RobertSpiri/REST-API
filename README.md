@@ -17,11 +17,11 @@ Download the repository to your local machine
 
 Start the Data Base with mongod.exe
 
-Run the folowing in bash
+Go to the folder with the project , open the bash and run the folowing
 ```
 mvn clean install -U
 
-cd "target"
+cd target
 
 java -jar robert-REST-API-0.1.0.jar
 ```
