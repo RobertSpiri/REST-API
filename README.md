@@ -90,7 +90,7 @@ To remove a student : DELETE on http://localhost:8080/students/"student_id"
 
 To remove a course : DELETE on http://localhost:8080/courses/"course_id"
 
-To remove a course to a student : POST on http://localhost:8080/students/"student_id"/removecourse with a form-data body with the key: "courseId" and the value being the id of the course
+To remove a course from a student : POST on http://localhost:8080/students/"student_id"/removecourse with a form-data body with the key: "courseId" and the value being the id of the course
 
-To remove a student to a course : POST on http://localhost:8080/courses/"course_id"/removestudent with a form-data body with the key: "studentId" and the value being the id of the student 
+To remove a student from a course : POST on http://localhost:8080/courses/"course_id"/removestudent with a form-data body with the key: "studentId" and the value being the id of the student 
 
