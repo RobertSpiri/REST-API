@@ -9,9 +9,7 @@
 
 [PostMan Windows](https://app.getpostman.com/app/download/win64?_ga=2.85332507.329633062.1529917507-36859038.1529582665)
 
-[Maven](https://maven.apache.org/)
-
-[Maven install guide](https://maven.apache.org/install.html)
+[Maven](https://maven.apache.org/) - [Maven install guide](https://maven.apache.org/install.html)
 
 ## Usage
 
