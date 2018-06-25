@@ -17,7 +17,7 @@ Download the repository to your local machine
 
 Start the Data Base with mongod.exe
 
-Go to the folder with the project , open the bash and run the folowing
+Go to the folder with the project , open the bash from that folder and run the folowing
 ```
 mvn clean install -U
 
