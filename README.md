@@ -33,7 +33,7 @@ To view all the students of a course : GET on http://localhost:8080/courses/"cou
 #### ADD
 
 To add a student : POST on http://localhost:8080/students with a JSON body
-
+```
 {
 
     "name" : "StudentName",
@@ -41,6 +41,7 @@ To add a student : POST on http://localhost:8080/students with a JSON body
     "lastName" : "StudentLastName"
     
 }
+```
 
 To add a course : POST on http://localhost:8080/courses with a JSON body
 
